@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(15, 15, 15);
+}
+
+h3,
+h4 {
+    text-align: center;
+}
+
+#card {
+    width: 50%;
+    margin: 32px auto;
+    padding: 1.5em 0.5em;
+    background-color: white;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    column-gap: 0.5em;
+}
+
+@media (max-width:720px) {
+    .flex-container {
+        flex-direction: column;
+        margin-left: auto;
+    }
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input,
+select {
+    max-width: 150px;
+    font-size: 1em;
+    border: thin solid grey;
+    margin: 0.5em 0;
+    padding: 5px;
+}
+
+input[type="submit"] {
+    max-width: 100px;
+    background-color: rgb(4, 124, 172);
+    border-color: rgb(4, 124, 172);
+    color: white;
+    padding: 3px 10px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
