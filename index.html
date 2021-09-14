@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewpoet" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+    <div id="card">
+        <h3>Temperature Converter</h3>
+        <form>
+            <div class="flex-container">
+                <div class="column">
+                    <label for="degrees">Degrees: </label>
+                    <input type="number" name="degrees" v-model="degrees">
+                </div>
+                <div class="column">
+                    <label for="select">Convert to:</label>
+                    <select v-model="option">
+                    <option name="fahrenheit" value="fahrenheit" >Fahrenheit</option>
+                    <option name="celsius" value="celsius" >Celsius</option>
+                    <option name="calvin" value="calvin" >Calvin</option>
+                </select>
+                </div>
+                <input type="submit" value="convert" class="result" v-on:click="press">
+            </div>
+        </form>
+        <h4>{{temperature}}</h4>
+    </div>
+    <script type="text/javascript " src="assets/vue.js "></script>
+    <script src="assets/app.js"></script>
+</body>
+
+</html>
