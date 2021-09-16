@@ -15,23 +15,28 @@
             <div class="flex-container">
                 <div class="column">
                     <label for="degrees">Degrees: </label>
-                    <input type="number" name="degrees" v-model="degrees">
+                    <input type="number" name="degrees" v-model.number="degrees">
+                </div>
+                <div>
+                    <fieldset class="column">
+                        <legend>In</legend>
+                        <label for="f"><input type="radio" name="scale"  value="c" v-model="unitPicked" v-on:change="optionValue"> C </label>
+                        <label for="f "><input type="radio" name="scale" value="f" v-model="unitPicked" v-on:change="optionValue"> F</label>
+                    </fieldset>
                 </div>
                 <div class="column">
                     <label for="select">Convert to:</label>
-                    <select v-model="option">
-                    <option name="fahrenheit" value="fahrenheit" >Fahrenheit</option>
-                    <option name="celsius" value="celsius" >Celsius</option>
-                    <option name="calvin" value="calvin" >Calvin</option>
+                    <select v-model="selected " v-on:change="convert " v-on:click="convert ">
+                        <option disabled value=" ">Select system</option>
+                        <option v-for="option in options " v-bind:value="{id: option.id, text: option.name} ">{{option.name}}</option>
                 </select>
                 </div>
-                <input type="submit" value="convert" class="result" v-on:click="press">
             </div>
         </form>
-        <h4>{{temperature}}</h4>
+        <h4>{{temperature}}&deg; {{unit}} </h4>
     </div>
     <script type="text/javascript " src="assets/vue.js "></script>
-    <script src="assets/app.js"></script>
+    <script src="assets/app.js "></script>
 </body>
 
 </html>
