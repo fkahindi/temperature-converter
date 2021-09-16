@@ -19,20 +19,21 @@
                 </div>
                 <div>
                     <fieldset class="column">
-                        <legend>In</legend>
+                        <legend>Scale</legend>
                         <label for="f"><input type="radio" name="scale"  value="c" v-model="unitPicked" v-on:change="optionValue"> C </label>
                         <label for="f "><input type="radio" name="scale" value="f" v-model="unitPicked" v-on:change="optionValue"> F</label>
                     </fieldset>
                 </div>
                 <div class="column">
                     <label for="select">Convert to:</label>
-                    <select v-model="selected " v-on:change="convert " v-on:click="convert ">
-                        <option disabled value=" ">Select system</option>
-                        <option v-for="option in options " v-bind:value="{id: option.id, text: option.name} ">{{option.name}}</option>
+                    <select v-model="selected" v-on:change="convert " v-on:click="convert ">
+                        <option disabled value="">Select system</option>
+                        <option v-for="option in options" v-bind:value="{id: option.id, text: option.name}">{{option.name}}</option>
                 </select>
                 </div>
             </div>
         </form>
+        <hr />
         <h4>{{temperature}}&deg; {{unit}} </h4>
     </div>
     <script type="text/javascript " src="assets/vue.js "></script>
