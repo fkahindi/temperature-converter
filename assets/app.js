@@ -18,29 +18,30 @@ var app = new Vue({
             this.unitPicked = event.target.value;
         },
         convert: function(event) {
+            var deg = Number(this.degrees);
             switch (this.selected.id) {
                 case 1:
                     this.unit = "F";
                     if (this.unitPicked == "c") {
-                        this.temperature = Math.round((this.degrees * (9 / 5)) + 32);
+                        this.temperature = Math.round((deg * (9 / 5)) + 32);
                     } else {
-                        this.temperature = this.degrees;
+                        this.temperature = deg;
                     }
                     break;
                 case 2:
                     this.unit = "C"
                     if (this.unitPicked == "f") {
-                        this.temperature = Math.round((this.degrees - 32) * (5 / 9))
+                        this.temperature = Math.round((deg - 32) * (5 / 9))
                     } else {
-                        this.temperature = this.degrees;
+                        this.temperature = deg;
                     }
                     break;
                 case 3:
                     this.unit = "K"
                     if (this.unitPicked == "c") {
-                        this.temperature = this.degrees + 273;
+                        this.temperature = deg + 273;
                     } else if (this.unitPicked == "f") {
-                        this.temperature = Math.round((this.degrees - 32) * (5 / 9) + 273);
+                        this.temperature = Math.round((deg - 32) * (5 / 9) + 273);
                     }
                     break;
                 default:
